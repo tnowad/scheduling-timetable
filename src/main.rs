@@ -14,4 +14,9 @@ fn main() {
         std::process::exit(1);
     });
 
+    let subject_codes = ["BOBA11", "861305", "866103"];
+    let days = [2, 3, 4, 5, 6, 7];
+
+    let filtered_classes = filter_classes(&classes, &subject_codes, &days);
+
 }
