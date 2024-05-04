@@ -29,4 +29,10 @@ fn main() {
 
     let schedules = generate_schedules(&filtered_classes, &subject_codes, &periods);
 
+    println!("Possible schedules:");
+
+    for (i, schedule) in schedules.iter().enumerate() {
+        println!("Schedule {}:", i + 1);
+        draw_schedule(schedule);
+    }
 }

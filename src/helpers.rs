@@ -1,3 +1,18 @@
+use std::collections::HashMap;
+
+use crate::structs::{Class, Period, PeriodTime};
+
+pub fn generate_periods(
+    start_day: i32,
+    end_day: i32,
+    start_period: i32,
+    end_period: i32,
+) -> Vec<Period> {
+    (start_day..=end_day)
+        .flat_map(|day| (start_period..=end_period).map(move |period| Period { period, day }))
+        .collect()
+}
+
 pub fn filter_classes(classes: &[Class], subject_codes: &[&str], days: &[i32]) -> Vec<Class> {
     classes
         .iter()
