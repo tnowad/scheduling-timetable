@@ -1,8 +1,11 @@
 mod file_io;
+mod helpers;
 mod json_parser;
 mod schedule_generator;
+mod structs;
 
 use crate::file_io::read_json_file;
+use crate::helpers::{draw_schedule, filter_classes, generate_periods};
 use crate::json_parser::parse_json;
 use crate::schedule_generator::generate_schedules;
 
@@ -25,4 +28,5 @@ fn main() {
     let periods = generate_periods(2, 6, 1, 10);
 
     let schedules = generate_schedules(&filtered_classes, &subject_codes, &periods);
+
 }
